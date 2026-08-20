@@ -3,18 +3,13 @@
 venv/
 ENV/
 
-# PyTorch & HuggingFace training checkpoints / large outputs
-results/
-checkpoint-*/
-*.pt
+# Large model weights and optimizer states (>100MB)
 *.safetensors
-*.pth
-*.bin
+optimizer.pt
 
 # Python cache
 __pycache__/
 *.py[cod]
-*$py.class
 
 # IDE and OS settings
 .DS_Store
