@@ -1,0 +1,22 @@
+# Virtual environment
+.venv/
+venv/
+ENV/
+
+# PyTorch & HuggingFace training checkpoints / large outputs
+results/
+checkpoint-*/
+*.pt
+*.safetensors
+*.pth
+*.bin
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE and OS settings
+.DS_Store
+.vscode/
+.idea/
