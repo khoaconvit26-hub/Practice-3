@@ -5,13 +5,13 @@
 Bạn hãy đóng vai **giảng viên môn Deep Learning** và đồng thời là **trợ giảng lập trình Python**.  
 Hãy hướng dẫn tôi hoàn thành bài tập **Practice 3 – Get started with Hugging Face** theo cách dễ hiểu, từng bước, phù hợp với sinh viên mới học Deep Learning.
 
-## YÊU CẦU BẮT BUỘC VỀ JUPYTER NOTEBOOK
+## YÊU CẦU BẮT BUỘC VỀ FILE PYTHON SCRIPT (.PY)
 
-**Toàn bộ Practice 3 chỉ được thực hiện bằng Jupyter Notebook (`.ipynb`) theo yêu cầu của giảng viên.** Không tạo hoặc yêu cầu chạy file `.py`. Mọi phần cài thư viện, import, tải model, tokenization, dataset, fine-tuning, evaluation và test đều phải nằm trong các **Markdown Cell** và **Code Cell**.
+**Toàn bộ Practice 3 được thực hiện bằng file Python script (`.py`) (ví dụ: `Practice3_Exercise1.py`, `Practice3_Exercise2.py` hoặc `practice3.py`).** Không bắt buộc sử dụng Jupyter Notebook (`.ipynb`). Mọi phần cài thư viện, import, tải model, tokenization, dataset, fine-tuning, evaluation và test đều phải nằm trong các file code `.py` hoàn chỉnh, chuẩn hóa với các comment/docstring giải thích chi tiết.
 
-Hãy đánh số rõ từng cell: `Cell 1`, `Cell 2`, `Cell 3`,... và cho biết đó là **Markdown Cell** hay **Code Cell**. Notebook phải có thể chạy tuần tự từ trên xuống dưới bằng **Restart Kernel and Run All**.
+Hãy cấu trúc rõ từng file `.py`, phân chia thành các hàm hoặc khối lệnh có comment tiêu đề rõ ràng. Code phải có thể chạy trực tiếp bằng lệnh `python <file_name>.py` từ Terminal / Command Prompt.
 
-Trong notebook, ưu tiên cài thư viện bằng `%pip install ...`. Nếu vừa cài/cập nhật thư viện, hãy nhắc khi nào cần **Restart Kernel**.
+Cài đặt thư viện bằng lệnh terminal chuẩn `pip install ...` (hoặc `python -m pip install ...`).
 
 Tôi muốn bạn **không chỉ đưa code**, mà phải giải thích rõ:
 - Mục đích của từng bước.
@@ -80,11 +80,11 @@ Sau đó hướng dẫn cài đặt các thư viện cần thiết.
 
 Ví dụ:
 
-```python
-%pip install transformers torch
+```bash
+pip install transformers torch
 ```
 
-Chỉ hướng dẫn bằng **Jupyter Notebook**: cách tạo notebook, thêm Markdown Cell/Code Cell, chạy cell bằng `Shift + Enter`, Restart Kernel và `Run All` trước khi nộp.
+Hướng dẫn thực hiện bằng **Python Script (`.py`)**: cách tạo file `.py`, chạy file trong Terminal bằng lệnh `python <filename>.py` hoặc trong IDE (VS Code, PyCharm).
 
 Nếu có sự khác biệt giữa:
 
@@ -304,8 +304,8 @@ Accuracy / F1 / Precision / Recall
 
 Hướng dẫn cài:
 
-```python
-%pip install transformers datasets evaluate accelerate torch scikit-learn
+```bash
+pip install transformers datasets evaluate accelerate torch scikit-learn
 ```
 
 Giải thích ngắn gọn chức năng từng thư viện:
@@ -709,29 +709,31 @@ Exercise 2 = lấy model có sẵn và huấn luyện thêm trên dataset của 
 
 ---
 
-# YÊU CẦU VỀ JUPYTER NOTEBOOK
+# YÊU CẦU VỀ FILE PYTHON SCRIPT (.PY)
 
-Chỉ tạo **một notebook hoàn chỉnh** có tên gợi ý:
+Tạo các **file Python script (`.py`) hoàn chỉnh** có tên gợi ý:
 
 ```text
-Practice3_HuggingFace.ipynb
+Practice3_Exercise1.py
+Practice3_Exercise2.py
+(Hoặc một file practice3.py / main.py duy nhất)
 ```
 
-Không cung cấp phiên bản `practice3.py`. Mỗi bước phải trình bày theo mẫu:
+Mỗi phần trong script phải trình bày rõ ràng với cấu trúc:
 
-### Cell X – Markdown Cell
-Dùng cho tiêu đề, mục tiêu, lý thuyết, giải thích và nhận xét.
+### Comment / Docstring
+Dùng cho tiêu đề, mục tiêu, lý thuyết, giải thích và nhận xét ngay trong code Python.
 
-### Cell X – Code Cell
-Dùng cho Python code hoặc `%pip install`.
+### Python Code Block
+Dùng cho các câu lệnh Python (import, load model, preprocess, train, evaluation,...).
 
 ### Output dự kiến
-Giải thích kết quả cần xuất hiện ngay dưới cell.
+Giải thích kết quả xuất ra ở màn hình Console / Terminal khi chạy file `.py`.
 
-Notebook cần có thứ tự tối thiểu:
+Script Python cần có thứ tự tối thiểu:
 
 ```text
-Tiêu đề Practice 3
+Tiêu đề Practice 3 & Import thư viện
 → Chuẩn bị môi trường
 → Exercise 1: Sentiment Analysis
 → Tokenization
@@ -750,7 +752,7 @@ Tiêu đề Practice 3
 → Conclusion
 ```
 
-Code phải có comment vừa đủ, dễ đọc, không dư thừa và phù hợp với sinh viên mới học. Notebook phải chạy được từ đầu đến cuối bằng **Restart Kernel and Run All** mà không phụ thuộc vào việc chạy cell sai thứ tự.
+Code phải có comment vừa đủ, dễ đọc, không dư thừa và phù hợp với sinh viên mới học. File `.py` phải chạy được từ đầu đến cuối bằng lệnh `python <script_name>.py` trong Terminal mà không bị lỗi.
 
 # YÊU CẦU VỀ GPU / CPU
 
@@ -827,8 +829,8 @@ Using the Trainer with PyTorch requires accelerate
 
 Cách sửa:
 
-```python
-%pip install -U accelerate
+```bash
+pip install -U accelerate
 ```
 
 ---
@@ -1051,8 +1053,8 @@ Hãy trả lời lần lượt:
 1. Phân tích đề bài.
 2. Chuẩn bị môi trường.
 3. Exercise 1 từng bước.
-4. Exercise 1 theo từng Markdown Cell và Code Cell.
-5. Exercise 2 theo từng Markdown Cell và Code Cell.
+4. Exercise 1 theo dạng file Python script (`.py`).
+5. Exercise 2 theo dạng file Python script (`.py`).
 6. Giải thích output và nhận xét của từng phần.
 7. Giải thích kết quả.
 8. Các lỗi thường gặp.
@@ -1075,6 +1077,6 @@ Mục tiêu cuối cùng là sau khi làm theo hướng dẫn, tôi phải:
 - Hiểu các chỉ số Accuracy/F1.
 - Có đủ hình để làm báo cáo.
 - Có thể giải thích code khi giảng viên hỏi.
-- Có file `Practice3_HuggingFace.ipynb` hoàn chỉnh để nộp.
-- Không tạo file `.py`.
-- Trước khi nộp phải thử `Restart Kernel and Run All` và bảo đảm không còn traceback/error.
+- Có các file `.py` (`Practice3_Exercise1.py`, `Practice3_Exercise2.py` hoặc `practice3.py`) hoàn chỉnh để nộp và thực thi.
+- Yêu cầu tạo file `.py` hoàn chỉnh và chạy được.
+- Trước khi nộp phải thử chạy lệnh `python <script_name>.py` trong Terminal và bảo đảm không còn traceback/error.
